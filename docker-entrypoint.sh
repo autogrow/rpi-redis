@@ -1,9 +1,9 @@
 #!/bin/bash
-set -e
+set -ex
 
 if [ "$1" = 'redis-server' ]; then
 	chown -R redis .
-	exec gosu redis "$@" /etc/redis.conf
+	exec gosu redis "$@"
 fi
 
-exec "$@" /etc/redis.conf
+exec "$@"
